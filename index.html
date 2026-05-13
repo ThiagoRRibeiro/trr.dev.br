@@ -360,10 +360,15 @@
         <div class="nav-content">
             <a href="#" class="nav-logo">TRR.DEV.BR</a>
             <div class="nav-menu">
-                <a style="cursor: pointer;" onclick="smoothScroll('skills')">Skills</a>
-                <a style="cursor: pointer;" onclick="smoothScroll('projects')">Projects</a>
-                <a style="cursor: pointer;" onclick="smoothScroll('experience')">Experience</a>
-                <a style="cursor: pointer;" onclick="smoothScroll('contact')">Contact</a>
+                <a style="cursor: pointer;" onclick="smoothScroll('skills')" data-key="nav_skills">Skills</a>
+                <a style="cursor: pointer;" onclick="smoothScroll('projects')" data-key="nav_projects">Projects</a>
+                <a style="cursor: pointer;" onclick="smoothScroll('experience')" data-key="nav_experience">Experience</a>
+                <a style="cursor: pointer;" onclick="smoothScroll('contact')" data-key="nav_contact">Contact</a>
+                <select id="language-selector" style="margin-left: 25px; padding: 5px; border-radius: 5px; font-family: 'Poppins', sans-serif; font-weight: 600; cursor: pointer;">
+                    <option value="en">English</option>
+                    <option value="pt-BR">Português</option>
+                    <option value="es">Español</option>
+                </select>
             </div>
         </div>
     </nav>
@@ -373,9 +378,9 @@
         <div class="hero-container">
             <div class="hero-content">
                 <!-- Using H1 and <span> to control line breaks and emphasis -->
-                <h1><span class="hero-name">THIAGO RAYMUNDO RIBEIRO</span></h1>
-                <p>Senior .NET Full Stack Developer <br /> 10+ Years Experience</p>
-                <a class="btn" onclick="smoothScroll('projects')">View Portfolio</a>
+                <h1><span class="hero-name" data-key="hero_name">THIAGO RAYMUNDO RIBEIRO</span></h1>
+                <p data-key="hero_subtitle">Senior .NET Full Stack Developer <br /> 10+ Years Experience</p>
+                <a class="btn" onclick="smoothScroll('projects')" data-key="hero_cta">View Portfolio</a>
                 <p></p>
             </div>
 
@@ -390,28 +395,23 @@
     <!-- 2. SKILLS SECTION -->
     <section id="skills">
         <div class="container">
-            <h2 class="section-title">TECHNICAL SKILLS</h2>
+            <h2 class="section-title" data-key="skills_title">TECHNICAL SKILLS</h2>
             <div class="skill-grid">
                 <div class="skill-card">
-                    <h4>Backend</h4>
-                    <p>C# / .NET</p>
-                    <p>ASP.NET (Web Forms, MVC, REST APIs)</p>
-                    <p>Web Services & System Integrations</p>
+                    <h4 data-key="skill_backend">Backend</h4>
+                    <p data-key="skill_backend_list">C# / .NET<br />ASP.NET (Web Forms, MVC, REST APIs)<br />Web Services & System Integrations</p>
                 </div>
                 <div class="skill-card">
-                    <h4>Frontend</h4>
-                    <p>HTML5 / CSS3</p>
-                    <p>JavaScript</p>
-                    <p>Windows Presentation Foundation</p>
+                    <h4 data-key="skill_frontend">Frontend</h4>
+                    <p data-key="skill_frontend_list">HTML5 / CSS3<br />JavaScript<br />Windows Presentation Foundation</p>
                 </div>
                 <div class="skill-card">
-                    <h4>Databases</h4>
-                    <p>Microsoft SQL Server, T-SQL</p>
-                    <p>MySQL, Oracle, SQLite</p>
+                    <h4 data-key="skill_db">Databases</h4>
+                    <p data-key="skill_db_list">Microsoft SQL Server, T-SQL<br />MySQL, Oracle, SQLite</p>
                 </div>
                 <div class="skill-card">
-                    <h4>Tools & Methodologies</h4>
-                    <p>Visual Studio, Git, CI/CD, Agile Scrum, Version Control, OOP Principles, Software testing & validation, Clean code & maintainable architecture.</p>
+                    <h4 data-key="skill_tools">Tools & Methodologies</h4>
+                    <p data-key="skill_tools_list">Visual Studio, Git, CI/CD, Agile Scrum, Version Control, OOP Principles, Software testing & validation, Clean code & maintainable architecture.</p>
                 </div>
             </div>
         </div>
@@ -420,26 +420,13 @@
     <!-- 3. PROJECTS SECTION -->
     <section id="projects">
         <div class="container">
-            <h2 class="section-title">PROJECT SHOWCASE</h2>
+            <h2 class="section-title" data-key="projects_title">PROJECT SHOWCASE</h2>
             <div class="project-grid">
                 <div class="project-card">
-                    <h3>Squad Hub</h3>
-                    <p>Squad Hub is a comprehensive soccer team management application designed to streamline the organization of matches, player statistics, and team finances. It offers an intuitive interface for coaches and team managers.</p>
-                    <p><strong>Tech Stack:</strong> .NET 10 (target framework), .NET MAUI for cross-platform UI (XAML + C#)</p>
-                    <!--<div style="margin-top: 15px;"><a href="#" style="color: var(--primary-red); margin-right: 15px;">Live Demo</a><a href="#" style="color: var(--secondary-dark);">GitHub</a></div>-->
+                    <h3 data-key="proj_squadhub_title">Squad Hub</h3>
+                    <p data-key="proj_squadhub_desc">Squad Hub is a comprehensive soccer team management application designed to streamline the organization of matches, player statistics, and team finances. It offers an intuitive interface for coaches and team managers.</p>
+                    <p><strong data-key="tech_stack">Tech Stack:</strong> <span data-key="proj_squadhub_tech">.NET 10 (target framework), .NET MAUI for cross-platform UI (XAML + C#)</span></p>
                 </div>
-                <!--<div class="project-card" style="flex-basis: calc(33% - 20px);">
-                    <h3>Client Dashboard Portal</h3>
-                    <p>Built a highly interactive user dashboard enabling real-time data visualization and reporting.</p>
-                    <p><strong>Tech Stack:</strong> React, Redux, Chart.js, Custom API.</p>
-                    <div style="margin-top: 15px;"><a href="#" style="color: var(--primary-red); margin-right: 15px;">Live Demo</a><a href="#" style="color: var(--secondary-dark);">GitHub</a></div>
-                </div>
-                <div class="project-card" style="flex-basis: calc(33% - 20px);">
-                    <h3>Inventory Management Tool</h3>
-                    <p>A desktop/web application designed for small businesses to track assets and monitor stock levels.</p>
-                    <p><strong>Tech Stack:</strong> C#, WPF, Local Database.</p>
-                    <div style="margin-top: 15px;"><a href="#" style="color: var(--primary-red); margin-right: 15px;">Live Demo</a><a href="#" style="color: var(--secondary-dark);">GitHub</a></div>
-                </div>-->
             </div>
         </div>
     </section>
@@ -447,86 +434,86 @@
     <!-- 4. EXPERIENCE TIMELINE SECTION -->
     <section id="experience">
         <div class="container">
-            <h2 class="section-title">PROFESSIONAL JOURNEY</h2>
+            <h2 class="section-title" data-key="exp_title">PROFESSIONAL JOURNEY</h2>
             <div class="timeline-container">
 
                 <!-- Entry 1: Promob (The current role) -->
                 <div class="timeline-item">
                     <div class="timeline-header">
-                        <h3>Analyst Programmer</h3>
+                        <h3 data-key="job1_title">Analyst Programmer</h3>
                         <span class="timeline-dates">2021 - Present</span>
                     </div>
-                    <p style="font-style: italic;">Promob Software Solutions (Cyncly Group) | Caxias do Sul, Brazil</p>
+                    <p style="font-style: italic;" data-key="job1_company">Promob Software Solutions (Cyncly Group) | Caxias do Sul, Brazil</p>
                     <br />
                     <div class="job-description">
-                        <p>• Lead development and maintenance of enterprise-grade applications.</p>
-                        <p>• Contributed to architectural decisions and system improvements.</p>
-                        <p>• Improved system performance and stability through refactoring and optimization.</p>
-                        <p>• Worked on integrations between multiple systems and services.</p>
+                        <p data-key="job1_desc1">• Lead development and maintenance of enterprise-grade applications.</p>
+                        <p data-key="job1_desc2">• Contributed to architectural decisions and system improvements.</p>
+                        <p data-key="job1_desc3">• Improved system performance and stability through refactoring and optimization.</p>
+                        <p data-key="job1_desc4">• Worked on integrations between multiple systems and services.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-header">
-                        <h3>Senior Programmer</h3>
+                        <h3 data-key="job2_title">Senior Programmer</h3>
                         <span class="timeline-dates">2020 - 2021</span>
                     </div>
-                    <p style="font-style: italic;">Promob Software Solutions (Cyncly Group) | Caxias do Sul, Brazil</p>
+                    <p style="font-style: italic;" data-key="job2_company">Promob Software Solutions (Cyncly Group) | Caxias do Sul, Brazil</p>
                     <br />
                     <div class="job-description">
-                        <p>• Delivered complex features and critical system enhancements.</p>
-                        <p>• Mentored junior developers and performed code reviews.</p>
-                        <p>• Promoted best practices and code quality standards.</p>
+                        <p data-key="job2_desc1">• Delivered complex features and critical system enhancements.</p>
+                        <p data-key="job2_desc2">• Mentored junior developers and performed code reviews.</p>
+                        <p data-key="job2_desc3">• Promoted best practices and code quality standards.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-header">
-                        <h3>Programmer</h3>
+                        <h3 data-key="job3_title">Programmer</h3>
                         <span class="timeline-dates">2018 - 2020</span>
                     </div>
-                    <p style="font-style: italic;">Promob Software Solutions (Cyncly Group) | Caxias do Sul, Brazil</p>
+                    <p style="font-style: italic;" data-key="job3_company">Promob Software Solutions (Cyncly Group) | Caxias do Sul, Brazil</p>
                     <br />
                     <div class="job-description">
-                        <p>• Developed new features and maintained existing systems.</p>
-                        <p>• Fixed bugs and improved system reliability.</p>
+                        <p data-key="job3_desc1">• Developed new features and maintained existing systems.</p>
+                        <p data-key="job3_desc2">• Fixed bugs and improved system reliability.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-header">
-                        <h3>Junior Programmer</h3>
+                        <h3 data-key="job4_title">Junior Programmer</h3>
                         <span class="timeline-dates">2016 - 2018</span>
                     </div>
-                    <p style="font-style: italic;">Promob Software Solutions (Cyncly Group) | Caxias do Sul, Brazil</p>
+                    <p style="font-style: italic;" data-key="job4_company">Promob Software Solutions (Cyncly Group) | Caxias do Sul, Brazil</p>
                     <br />
                     <div class="job-description">
-                        <p>• Supported development and maintenance tasks.</p>
-                        <p>• Built foundational experience in enterprise systems.</p>
+                        <p data-key="job4_desc1">• Supported development and maintenance tasks.</p>
+                        <p data-key="job4_desc2">• Built foundational experience in enterprise systems.</p>
                     </div>
                 </div>
 
                 <!-- Entry 2: Keyworks TI -->
                 <div class="timeline-item">
                     <div class="timeline-header">
-                        <h3>Programmer</h3>
+                        <h3 data-key="job5_title">Programmer</h3>
                         <span class="timeline-dates">2014 - 2016</span>
                     </div>
-                    <p style="font-style: italic;">Keyworks TI | Caxias do Sul, Brazil</p>
+                    <p style="font-style: italic;" data-key="job5_company">Keyworks TI | Caxias do Sul, Brazil</p>
                     <br />
                     <div class="job-description">
-                        <p>• Developed applications and business logic.</p>
-                        <p>• Designed and maintained database structures.</p>
-                        <p>• Built user interfaces and system features.</p>
+                        <p data-key="job5_desc1">• Developed applications and business logic.</p>
+                        <p data-key="job5_desc2">• Designed and maintained database structures.</p>
+                        <p data-key="job5_desc3">• Built user interfaces and system features.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-header">
-                        <h3>Internship</h3>
+                        <h3 data-key="job6_title">Internship</h3>
                         <span class="timeline-dates">2013 - 2014</span>
                     </div>
-                    <p style="font-style: italic;">Keyworks TI | Caxias do Sul, Brazil</p>
+                    <p style="font-style: italic;" data-key="job6_company">Keyworks TI | Caxias do Sul, Brazil</p>
                     <br />
                     <div class="job-description">
-                        <p>• Maintained legacy systems.</p>
-                        <p>• Supported low-complexity development tasks.</p>
+                        <p data-key="job6_desc1">• Maintained legacy systems.</p>
+                        <p data-key="job6_desc2">• Supported low-complexity development tasks.</p>
                     </div>
                 </div>
             </div>
@@ -536,8 +523,8 @@
     <!-- 5. CONTACT SECTION -->
     <section id="contact">
         <div class="container">
-            <h2>READY TO BUILD?</h2>
-            <p style="font-size: 1.5rem; margin-bottom: 30px;">I am open to connecting on new opportunities. Let's discuss how my expertise can help solve your most complex challenges.</p>
+            <h2 data-key="contact_title">READY TO BUILD?</h2>
+            <p style="font-size: 1.5rem; margin-bottom: 30px;" data-key="contact_subtitle">I am open to connecting on new opportunities. Let's discuss how my expertise can help solve your most complex challenges.</p>
             <div class="contact-links">
                 <p>Thiago Raymundo Ribeiro</p>
                 <hr />
@@ -581,12 +568,213 @@
     <!-- JavaScript for smooth scrolling and interactivity -->
     <script>
         // -------------------------------------------------
-        // JAVASCRIPT FUNCTIONALITY
+        // LOCALIZATION DATA
         // -------------------------------------------------
+        const localizationData = {
+            en: {
+                "nav_skills": "Skills",
+                "nav_projects": "Projects",
+                "nav_experience": "Experience",
+                "nav_contact": "Contact",
+                "hero_name": "THIAGO RAYMUNDO RIBEIRO",
+                "hero_subtitle": "Senior .NET Full Stack Developer <br /> 10+ Years Experience",
+                "hero_cta": "View Portfolio",
+                "skills_title": "TECHNICAL SKILLS",
+                "skill_backend": "Backend",
+                "skill_backend_list": "C# / .NET<br />ASP.NET (Web Forms, MVC, REST APIs)<br />Web Services & System Integrations",
+                "skill_frontend": "Frontend",
+                "skill_frontend_list": "HTML5 / CSS3<br />JavaScript<br />Windows Presentation Foundation",
+                "skill_db": "Databases",
+                "skill_db_list": "Microsoft SQL Server, T-SQL<br />MySQL, Oracle, SQLite",
+                "skill_tools": "Tools & Methodologies",
+                "skill_tools_list": "Visual Studio, Git, CI/CD, Agile Scrum, Version Control, OOP Principles, Software testing & validation, Clean code & maintainable architecture.",
+                "projects_title": "PROJECT SHOWCASE",
+                "proj_squadhub_title": "Squad Hub",
+                "proj_squadhub_desc": "Squad Hub is a comprehensive soccer team management application designed to streamline the organization of matches, player statistics, and team finances. It offers an intuitive interface for coaches and team managers.",
+                "tech_stack": "Tech Stack:",
+                "proj_squadhub_tech": ".NET 10 (target framework), .NET MAUI for cross-platform UI (XAML + C#)",
+                "exp_title": "PROFESSIONAL JOURNEY",
+                "job1_title": "Analyst Programmer",
+                "job1_company": "Promob Software Solutions (Cyncly Group) | Caxias do Sul, Brazil",
+                "job1_desc1": "• Lead development and maintenance of enterprise-grade applications.",
+                "job1_desc2": "• Contributed to architectural decisions and system improvements.",
+                "job1_desc3": "• Improved system performance and stability through refactoring and optimization.",
+                "job1_desc4": "• Worked on integrations between multiple systems and services.",
+                "job2_title": "Senior Programmer",
+                "job2_company": "Promob Software Solutions (Cyncly Group) | Caxias do Sul, Brazil",
+                "job2_desc1": "• Delivered complex features and critical system enhancements.",
+                "job2_desc2": "• Mentored junior developers and performed code reviews.",
+                "job2_desc3": "• Promoted best practices and code quality standards.",
+                "job3_title": "Programmer",
+                "job3_company": "Promob Software Solutions (Cyncly Group) | Caxias do Sul, Brazil",
+                "job3_desc1": "• Developed new features and maintained existing systems.",
+                "job3_desc2": "• Fixed bugs and improved system reliability.",
+                "job4_title": "Junior Programmer",
+                "job4_company": "Promob Software Solutions (Cyncly Group) | Caxias do Sul, Brazil",
+                "job4_desc1": "• Supported development and maintenance tasks.",
+                "job4_desc2": "• Built foundational experience in enterprise systems.",
+                "job5_title": "Programmer",
+                "job5_company": "Keyworks TI | Caxias do Sul, Brazil",
+                "job5_desc1": "• Developed applications and business logic.",
+                "job5_desc2": "• Designed and maintained database structures.",
+                "job5_desc3": "• Built user interfaces and system features.",
+                "job6_title": "Internship",
+                "job6_company": "Keyworks TI | Caxias do Sul, Brazil",
+                "job6_desc1": "• Maintained legacy systems.",
+                "job6_desc2": "• Supported low-complexity development tasks.",
+                "contact_title": "READY TO BUILD?",
+                "contact_subtitle": "I am open to connecting on new opportunities. Let's discuss how my expertise can help solve your most complex challenges."
+            },
+            "pt-BR": {
+                "nav_skills": "Habilidades",
+                "nav_projects": "Projetos",
+                "nav_experience": "Experiência",
+                "nav_contact": "Contato",
+                "hero_name": "THIAGO RAYMUNDO RIBEIRO",
+                "hero_subtitle": "Desenvolvedor Full Stack .NET Sênior <br /> Mais de 10 Anos de Experiência",
+                "hero_cta": "Ver Portfólio",
+                "skills_title": "HABILIDADES TÉCNICAS",
+                "skill_backend": "Backend",
+                "skill_backend_list": "C# / .NET<br />ASP.NET (Web Forms, MVC, REST APIs)<br />Serviços Web e Integrações de Sistemas",
+                "skill_frontend": "Frontend",
+                "skill_frontend_list": "HTML5 / CSS3<br />JavaScript<br />Windows Presentation Foundation",
+                "skill_db": "Bancos de Dados",
+                "skill_db_list": "Microsoft SQL Server, T-SQL<br />MySQL, Oracle, SQLite",
+                "skill_tools": "Ferramentas e Metodologias",
+                "skill_tools_list": "Visual Studio, Git, CI/CD, Agile Scrum, Controle de Versão, Princípios de OOP, Testes e validação de software, Código limpo e arquitetura sustentável.",
+                "projects_title": "VITRINE DE PROJETOS",
+                "proj_squadhub_title": "Squad Hub",
+                "proj_squadhub_desc": "Squad Hub é um aplicativo abrangente de gerenciamento de times de futebol, projetado para simplificar a organização de partidas, estatísticas de jogadores e finanças do time. Oferece uma interface intuitiva para treinadores e gestores de times.",
+                "tech_stack": "Stack Tecnológica:",
+                "proj_squadhub_tech": ".NET 10 (framework alvo), .NET MAUI para UI multiplataforma (XAML + C#)",
+                "exp_title": "JORNADA PROFISSIONAL",
+                "job1_title": "Analista Programador",
+                "job1_company": "Promob Software Solutions (Cyncly Group) | Caxias do Sul, Brasil",
+                "job1_desc1": "• Liderança no desenvolvimento e manutenção de aplicações de nível empresarial.",
+                "job1_desc2": "• Contribuição em decisões arquiteturais e melhorias de sistema.",
+                "job1_desc3": "• Melhoria de performance e estabilidade do sistema através de refatoração e otimização.",
+                "job1_desc4": "• Atuação em integrações entre múltiplos sistemas e serviços.",
+                "job2_title": "Programador Sênior",
+                "job2_company": "Promob Software Solutions (Cyncly Group) | Caxias do Sul, Brasil",
+                "job2_desc1": "• Entrega de funcionalidades complexas e melhorias críticas do sistema.",
+                "job2_desc2": "• Mentoria de desenvolvedores juniores e realização de revisões de código.",
+                "job2_desc3": "• Promoção de melhores práticas e padrões de qualidade de código.",
+                "job3_title": "Programador",
+                "job3_company": "Promob Software Solutions (Cyncly Group) | Caxias do Sul, Brasil",
+                "job3_desc1": "• Desenvolvimento de novas funcionalidades e manutenção de sistemas existentes.",
+                "job3_desc2": "• Correção de bugs e melhoria da confiabilidade do sistema.",
+                "job4_title": "Programador Júnior",
+                "job4_company": "Promob Software Solutions (Cyncly Group) | Caxias do Sul, Brasil",
+                "job4_desc1": "• Suporte em tarefas de desenvolvimento e manutenção.",
+                "job4_desc2": "• Construção de experiência fundamental em sistemas empresariais.",
+                "job5_title": "Programador",
+                "job5_company": "Keyworks TI | Caxias do Sul, Brasil",
+                "job5_desc1": "• Desenvolvimento de aplicações e lógica de negócio.",
+                "job5_desc2": "• Design e manutenção de estruturas de banco de dados.",
+                "job5_desc3": "• Construção de interfaces de usuário e funcionalidades do sistema.",
+                "job6_title": "Estágio",
+                "job6_company": "Keyworks TI | Caxias do Sul, Brasil",
+                "job6_desc1": "• Manutenção de sistemas legados.",
+                "job6_desc2": "• Suporte em tarefas de desenvolvimento de baixa complexidade.",
+                "contact_title": "PRONTO PARA CONSTRUIR?",
+                "contact_subtitle": "Estou aberto a novas oportunidades de conexão. Vamos discutir como minha expertise pode ajudar a resolver seus desafios mais complexos."
+            },
+            "es": {
+                "nav_skills": "Habilidades",
+                "nav_projects": "Proyectos",
+                "nav_experience": "Experiencia",
+                "nav_contact": "Contacto",
+                "hero_name": "THIAGO RAYMUNDO RIBEIRO",
+                "hero_subtitle": "Desarrollador Full Stack .NET Senior <br /> Más de 10 Años de Experiencia",
+                "hero_cta": "Ver Portafolio",
+                "skills_title": "HABILIDADES TÉCNICAS",
+                "skill_backend": "Backend",
+                "skill_backend_list": "C# / .NET<br />ASP.NET (Web Forms, MVC, REST APIs)<br />Servicios Web e Integraciones de Sistemas",
+                "skill_frontend": "Frontend",
+                "skill_frontend_list": "HTML5 / CSS3<br />JavaScript<br />Windows Presentation Foundation",
+                "skill_db": "Bases de Datos",
+                "skill_db_list": "Microsoft SQL Server, T-SQL<br />MySQL, Oracle, SQLite",
+                "skill_tools": "Herramientas y Metodologías",
+                "skill_tools_list": "Visual Studio, Git, CI/CD, Agile Scrum, Control de Versiones, Principios de OOP, Pruebas y validación de software, Código limpio y arquitectura mantenible.",
+                "projects_title": "VITRINA DE PROYECTOS",
+                "proj_squadhub_title": "Squad Hub",
+                "proj_squadhub_desc": "Squad Hub es una aplicación integral de gestión de equipos de fútbol, diseñada para simplificar la organización de partidos, estadísticas de jugadores y finanzas del equipo. Ofrece una interfaz intuitiva para entrenadores y gestores de equipos.",
+                "tech_stack": "Stack Tecnológico:",
+                "proj_squadhub_tech": ".NET 10 (framework objetivo), .NET MAUI para UI multiplataforma (XAML + C#)",
+                "exp_title": "JORNADA PROFESIONAL",
+                "job1_title": "Analista Programador",
+                "job1_company": "Promob Software Solutions (Cyncly Group) | Caxias do Sul, Brasil",
+                "job1_desc1": "• Liderar el desarrollo y mantenimiento de aplicaciones de grado empresarial.",
+                "job1_desc2": "• Contribuir a decisiones arquitectónicas y mejoras del sistema.",
+                "job1_desc3": "• Mejorar el rendimiento y la estabilidad del sistema mediante la refactorización y la optimización.",
+                "job1_desc4": "• Trabajar en integraciones entre múltiples sistemas y servicios.",
+                "job2_title": "Programador Senior",
+                "job2_company": "Promob Software Solutions (Cyncly Group) | Caxias do Sul, Brasil",
+                "job2_desc1": "• Entregar funcionalidades complejas y mejoras críticas del sistema.",
+                "job2_desc2": "• Mentorizar a desarrolladores junior y realizar revisiones de código.",
+                "job2_desc3": "• Promover las mejores prácticas y estándares de calidad de código.",
+                "job3_title": "Programador",
+                "job3_company": "Promob Software Solutions (Cyncly Group) | Caxias do Sul, Brasil",
+                "job3_desc1": "• Desarrollar nuevas funcionalidades y mantener los sistemas existentes.",
+                "job3_desc2": "• Corregir errores y mejorar la fiabilidad del sistema.",
+                "job4_title": "Programador Junior",
+                "job4_company": "Promob Software Solutions (Cyncly Group) | Caxias do Sul, Brasil",
+                "job4_desc1": "• Apoyar las tareas de desarrollo y mantenimiento.",
+                "job4_desc2": "• Construir experiencia fundamental en sistemas empresariales.",
+                "job5_title": "Programador",
+                "job5_company": "Keyworks TI | Caxias do Sul, Brasil",
+                "job5_desc1": "• Desarrollar aplicaciones y lógica de negocio.",
+                "job5_desc2": "• Diseñar y mantener estructuras de bases de datos.",
+                "job5_desc3": "• Construir interfaces de usuario y funcionalidades del sistema.",
+                "job6_title": "Pasantía",
+                "job6_company": "Keyworks TI | Caxias do Sul, Brasil",
+                "job6_desc1": "• Mantener sistemas heredados.",
+                "job6_desc2": "• Apoyar tareas de desarrollo de baja complejidad.",
+                "contact_title": "¿LISTO PARA CONSTRUIR?",
+                "contact_subtitle": "Estoy abierto a conectar con nuevas oportunidades. Discutamos cómo mi experiencia puede ayudar a resolver sus desafíos más complejos."
+            }
+        };
 
-        // Function for smooth scrolling when clicking navigation links
-        function smoothScroll(elementId)
-        {
+        function setLanguage(locale) {
+            document.documentElement.lang = locale;
+            const elements = document.querySelectorAll('[data-key]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (localizationData[locale] && localizationData[locale][key]) {
+                    const translation = localizationData[locale][key];
+                    if (translation.includes('<br />')) {
+                        el.innerHTML = translation;
+                    } else {
+                        el.textContent = translation;
+                    }
+                }
+            });
+            const selector = document.getElementById('language-selector');
+            if (selector) {
+                selector.value = locale;
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const browserLang = navigator.language || navigator.userLanguage;
+            let locale = 'en';
+            if (browserLang.startsWith('pt')) {
+                locale = 'pt-BR';
+            } else if (browserLang.startsWith('es')) {
+                locale = 'es';
+            } else if (browserLang.startsWith('en')) {
+                locale = 'en';
+            }
+            setLanguage(locale);
+            const selector = document.getElementById('language-selector');
+            if (selector) {
+                selector.addEventListener('change', (e) => {
+                    setLanguage(e.target.value);
+                });
+            }
+        });
+
+        function smoothScroll(elementId) {
             document.getElementById(elementId).scrollIntoView({ behavior: 'smooth' });
         }
     </script>
