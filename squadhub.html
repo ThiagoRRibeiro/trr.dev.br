@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squad Hub | Thiago Raymundo Ribeiro</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* ================================== */
+        /* CSS STYLES - Inherited from Main Portfolio */
+        /* ================================== */
+
+        :root {
+            --primary-red: #A03030;
+            --secondary-dark: #333333;
+            --light-gray: #F7F7F7;
+            --text-light: #E0E0E0;
+            --padding-section: 6rem 5%;
+            /* Squad Hub Specific Colors */
+            --squadhub-green: #009966;
+            --squadhub-orange: #fe9a00;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--secondary-dark);
+            background-color: white;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 3rem;
+            color: var(--squadhub-green);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--squadhub-green);
+            margin: 10px auto 0;
+        }
+
+        section {
+            padding: var(--padding-section);
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary-red);
+            text-decoration: none;
+        }
+
+        .nav-menu a {
+            color: var(--secondary-dark);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-red);
+        }
+
+        /* Hero Section */
+        #hero {
+            background-color: var(--light-gray);
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            font-weight: 900;
+            color: var(--squadhub-green);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        /* Store Buttons */
+        .store-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn-store {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background-color: var(--secondary-dark);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .btn-store:hover {
+            transform: translateY(-3px);
+            background-color: #000;
+        }
+
+        .btn-store img {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Screenshot Grid */
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .screenshot-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border: 1px solid #eee;
+        }
+
+        .screenshot-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .screenshot-caption {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .screenshot-caption h4 {
+            color: var(--squadhub-green);
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .screenshot-caption p {
+            font-size: 0.95rem;
+            color: #777;
+        }
+
+        /* Tech Tags */
+        .tech-tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tech-tag {
+            background-color: var(--squadhub-green);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        #footer {
+            background-color: var(--primary-red);
+            color: white;
+            text-align: center;
+            padding: 60px 5%;
+        }
+
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .nav-menu {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">TRR.DEV.BR</a>
+            <div class="nav-menu">
+                <a href="index.html">Home</a>
+                <select id="language-selector" style="margin-left: 25px; padding: 5px; border-radius: 5px; font-family: 'Poppins', sans-serif; font-weight: 600; cursor: pointer;">
+                    <option value="en">English</option>
+                    <option value="pt-BR">Português</option>
+                    <option value="es">Español</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1 data-key="app_name">Squad Hub</h1>
+            <p data-key="app_description">The all-in-one mobile platform designed to help recreational and amateur sports teams manage their squads, organize matches, and track performance.</p>
+            
+            <div class="store-links">
+                <a href="#" class="btn-store" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
+                    <span data-key="store_google">Get it on Google Play</span>
+                </a>
+                <a href="#" class="btn-store" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store">
+                    <span data-key="store_apple">Download on App Store</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section id="features">
+        <div class="container">
+            <h2 class="section-title" data-key="features_title">APP FEATURES</h2>
+            
+            <div class="screenshot-grid">
+                <!-- Feature 1 -->
+                <div class="screenshot-item">
+                    <img src="https://via.placeholder.com/300x600?text=Squad+Management" alt="Squad Management">
+                    <div class="screenshot-caption">
+                        <h4 data-key="feat1_title">Squad & Player Management</h4>
+                        <p data-key="feat1_desc">Centralized directory of the team, making it simple to keep track of who is available to play, replacing scattered contacts.</p>
+                    </div>
+                </div>
+                <!-- Feature 2 -->
+                <div class="screenshot-item">
+                    <img src="https://via.placeholder.com/300x600?text=Match+Organization" alt="Match Organization">
+                    <div class="screenshot-caption">
+                        <h4 data-key="feat2_title">Match Organization & Lineup Editor</h4>
+                        <p data-key="feat2_desc">Schedule matches and visually drag and drop players into opposing teams with an intuitive interface.</p>
+                    </div>
+                </div>
+                <!-- Feature 3 -->
+                <div class="screenshot-item">
+                    <img src="https://via.placeholder.com/300x600?text=AI+Balance" alt="AI Balance">
+                    <div class="screenshot-caption">
+                        <h4 data-key="feat3_title">AI Auto Balance Lineups</h4>
+                        <p data-key="feat3_desc">Automatically divide players into highly balanced, competitive teams with a single tap using a smart algorithm.</p>
+                    </div>
+                </div>
+                <!-- Feature 4 -->
+                <div class="screenshot-item">
+                    <img src="https://via.placeholder.com/300x600?text=Player+Stats" alt="Player Stats">
+                    <div class="screenshot-caption">
+                        <h4 data-key="feat4_title">Player Statistics & Season Tracking</h4>
+                        <p data-key="feat4_desc">Log goals, assists, and wins to create professional-level leaderboards and track performance across seasons.</p>
+                    </div>
+                </div>
+                <!-- Feature 5 -->
+                <div class="screenshot-item">
+                    <img src="https://via.placeholder.com/300x600?text=Payment+Tracking" alt="Payment Tracking">
+                    <div class="screenshot-caption">
+                        <h4 data-key="feat5_title">Payment Tracking</h4>
+                        <p data-key="feat5_desc">Easily track the financial status of every match, ensuring no personal financial shortfalls when renting fields.</p>
+                    </div>
+                </div>
+                <!-- Feature 6 -->
+                <div class="screenshot-item">
+                    <img src="https://via.placeholder.com/300x600?text=Quick+Match" alt="Quick Match">
+                    <div class="screenshot-caption">
+                        <h4 data-key="feat6_title">Quick Match Generator</h4>
+                        <p data-key="feat6_desc">Rapidly create temporary matches and generate fair lineups for spontaneous pick-up games.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECH STACK SECTION -->
+    <section id="tech">
+        <div class="container">
+            <h2 class="section-title" data-key="tech_title">TECHNICAL STACK</h2>
+            <div class="tech-tags-container">
+                <span class="tech-tag">.NET 10</span>
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">.NET MAUI</span>
+                <span class="tech-tag">XAML</span>
+                <span class="tech-tag">Supabase</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">SQLite</span>
+                <span class="tech-tag">MVVM</span>
+                <span class="tech-tag">Dependency Injection</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="container">
+            <p>&copy; 2026 Thiago Raymundo Ribeiro</p>
+            <div class="footer-links" style="margin-top: 20px;">
+                <a href="index.html">Back to Portfolio</a>
+                <a href="https://www.linkedin.com/in/thiago-raymundo-ribeiro/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/ThiagoRRibeiro" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const localizationData = {
+            en: {
+                "app_name": "Squad Hub",
+                "app_description": "The all-in-one mobile platform designed to help recreational and amateur sports teams manage their squads, organize matches, and track performance.",
+                "store_google": "Get it on Google Play",
+                "store_apple": "Download on App Store",
+                "features_title": "APP FEATURES",
+                "feat1_title": "Squad & Player Management",
+                "feat1_desc": "Centralized directory of the team, making it simple to keep track of who is available to play, replacing scattered contacts.",
+                "feat2_title": "Match Organization & Lineup Editor",
+                "feat2_desc": "Schedule matches and visually drag and drop players into opposing teams with an intuitive interface.",
+                "feat3_title": "AI Auto Balance Lineups",
+                "feat3_desc": "Automatically divide players into highly balanced, competitive teams with a single tap using a smart algorithm.",
+                "feat4_title": "Player Statistics & Season Tracking",
+                "feat4_desc": "Log goals, assists, and wins to create professional-level leaderboards and track performance across seasons.",
+                "feat5_title": "Payment Tracking",
+                "feat5_desc": "Easily track the financial status of every match, ensuring no personal financial shortfalls when renting fields.",
+                "feat6_title": "Quick Match Generator",
+                "feat6_desc": "Rapidly create temporary matches and generate fair lineups for spontaneous pick-up games.",
+                "tech_title": "TECHNICAL STACK"
+            },
+            "pt-BR": {
+                "app_name": "Squad Hub",
+                "app_description": "A plataforma móvel completa projetada para ajudar times de esportes recreativos e amadores a gerenciar seus elencos, organizar partidas e acompanhar o desempenho.",
+                "store_google": "Disponível no Google Play",
+                "store_apple": "Baixe na App Store",
+                "features_title": "FUNCIONALIDADES",
+                "feat1_title": "Gestão de Elenco e Jogadores",
+                "feat1_desc": "Diretório centralizado do time, facilitando o controle de quem está disponível para jogar, substituindo contatos dispersos.",
+                "feat2_title": "Organização de Partidas e Editor de Escalação",
+                "feat2_desc": "Agende partidas e arraste visualmente os jogadores para times opostos com uma interface intuitiva.",
+                "feat3_title": "Equilíbrio Automático por IA",
+                "feat3_desc": "Divida automaticamente os jogadores em times altamente equilibrados e competitivos com um único toque usando um algoritmo inteligente.",
+                "feat4_title": "Estatísticas de Jogadores e Acompanhamento de Temporada",
+                "feat4_desc": "Registre gols, assistências e vitórias para criar rankings de nível profissional e acompanhar o desempenho entre temporadas.",
+                "feat5_title": "Controle de Pagamentos",
+                "feat5_desc": "Acompanhe facilmente o status financeiro de cada partida, garantindo que não haja prejuízos pessoais ao alugar quadras.",
+                "feat6_title": "Gerador de Partidas Rápidas",
+                "feat6_desc": "Crie rapidamente partidas temporárias e gere escalações justas para jogos espontâneos.",
+                "tech_title": "STACK TECNOLÓGICA"
+            },
+            "es": {
+                "app_name": "Squad Hub",
+                "app_description": "La plataforma móvil todo en uno diseñada para ayudar a los equipos deportivos recreativos y aficionados a gestionar sus plantillas, organizar partidos y seguir el rendimiento.",
+                "store_google": "Consíguelo en Google Play",
+                "store_apple": "Descárgalo en App Store",
+                "features_title": "CARACTERÍSTICAS",
+                "feat1_title": "Gestión de Plantilla y Jugadores",
+                "feat1_desc": "Directorio centralizado del equipo, facilitando el seguimiento de quién está disponible para jugar, sustituyendo los contactos dispersos.",
+                "feat2_title": "Organización de Partidos y Editor de Alineaciones",
+                "feat2_desc": "Programa partidos y arrastra visualmente a los jugadores a equipos opuestos con una interfaz intuitiva.",
+                "feat3_title": "Equilibrio Automático por IA",
+                "feat3_desc": "Divide automáticamente a los jugadores en equipos altamente equilibrados y competitivos con un solo toque utilizando un algoritmo inteligente.",
+                "feat4_title": "Estadísticas de Jugadores y Seguimiento de Temporada",
+                "feat4_desc": "Registra goles, asistencias y victorias para crear tablas de clasificación de nivel profesional y seguir el rendimiento a través de las temporadas.",
+                "feat5_title": "Seguimiento de Pagos",
+                "feat5_desc": "Sigue fácilmente el estado financiero de cada partido, asegurando que no haya déficits financieros personales al alquilar campos.",
+                "feat6_title": "Generador de Partidos Rápidos",
+                "feat6_desc": "Crea rápidamente partidos temporales y genera alineaciones justas para partidos espontáneos.",
+                "tech_title": "STACK TECNOLÓGICO"
+            }
+        };
+
+        function setLanguage(locale) {
+            document.documentElement.lang = locale;
+            const elements = document.querySelectorAll('[data-key]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (localizationData[locale] && localizationData[locale][key]) {
+                    el.innerHTML = localizationData[locale][key];
+                }
+            });
+            const selector = document.getElementById('language-selector');
+            if (selector) {
+                selector.value = locale;
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const browserLang = navigator.language || navigator.userLanguage;
+            let locale = 'en';
+            if (browserLang.startsWith('pt')) {
+                locale = 'pt-BR';
+            } else if (browserLang.startsWith('es')) {
+                locale = 'es';
+            } else if (browserLang.startsWith('en')) {
+                locale = 'en';
+            }
+            setLanguage(locale);
+            const selector = document.getElementById('language-selector');
+            if (selector) {
+                selector.addEventListener('change', (e) => {
+                    setLanguage(e.target.value);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Template | Thiago Raymundo Ribeiro</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* ================================== */
+        /* CSS STYLES - Inherited from Main Portfolio */
+        /* ================================== */
+
+        :root {
+            --primary-red: #A03030;
+            --secondary-dark: #333333;
+            --light-gray: #F7F7F7;
+            --text-light: #E0E0E0;
+            --padding-section: 6rem 5%;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--secondary-dark);
+            background-color: white;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 3rem;
+            color: var(--primary-red);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-red);
+            margin: 10px auto 0;
+        }
+
+        section {
+            padding: var(--padding-section);
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary-red);
+            text-decoration: none;
+        }
+
+        .nav-menu a {
+            color: var(--secondary-dark);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-red);
+        }
+
+        /* Hero Section */
+        #hero {
+            background-color: var(--light-gray);
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            font-weight: 900;
+            color: var(--primary-red);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        /* Store Buttons */
+        .store-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn-store {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background-color: var(--secondary-dark);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .btn-store:hover {
+            transform: translateY(-3px);
+            background-color: #000;
+        }
+
+        .btn-store img {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Screenshot Grid */
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .screenshot-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border: 1px solid #eee;
+        }
+
+        .screenshot-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .screenshot-caption {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .screenshot-caption h4 {
+            color: var(--primary-red);
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .screenshot-caption p {
+            font-size: 0.95rem;
+            color: #777;
+        }
+
+        /* Tech Tags */
+        .tech-tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tech-tag {
+            background-color: var(--primary-red);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        #footer {
+            background-color: var(--primary-red);
+            color: white;
+            text-align: center;
+            padding: 60px 5%;
+        }
+
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .nav-menu {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">TRR.DEV.BR</a>
+            <div class="nav-menu">
+                <a href="index.html">Home</a>
+                <select id="language-selector" style="margin-left: 25px; padding: 5px; border-radius: 5px; font-family: 'Poppins', sans-serif; font-weight: 600; cursor: pointer;">
+                    <option value="en">English</option>
+                    <option value="pt-BR">Português</option>
+                    <option value="es">Español</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1 data-key="app_name">[APP NAME]</h1>
+            <p data-key="app_description">A brief, high-impact description of your mobile application. Explain the core problem it solves and the main value proposition for the user.</p>
+            
+            <div class="store-links">
+                <a href="#" class="btn-store" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
+                    <span data-key="store_google">Get it on Google Play</span>
+                </a>
+                <a href="#" class="btn-store" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store">
+                    <span data-key="store_apple">Download on App Store</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section id="features">
+        <div class="container">
+            <h2 class="section-title" data-key="features_title">APP FEATURES</h2>
+            
+            <div class="screenshot-grid">
+                <!-- Feature 1 -->
+                <div class="screenshot-item">
+                    <img src="https://via.placeholder.com/300x600?text=Screenshot+1" alt="Feature 1">
+                    <div class="screenshot-caption">
+                        <h4 data-key="feat1_title">Feature One</h4>
+                        <p data-key="feat1_desc">Detailed description of how this feature works and why it is useful for the user.</p>
+                    </div>
+                </div>
+                <!-- Feature 2 -->
+                <div class="screenshot-item">
+                    <img src="https://via.placeholder.com/300x600?text=Screenshot+2" alt="Feature 2">
+                    <div class="screenshot-caption">
+                        <h4 data-key="feat2_title">Feature Two</h4>
+                        <p data-key="feat2_desc">Detailed description of how this feature works and why it is useful for the user.</p>
+                    </div>
+                </div>
+                <!-- Feature 3 -->
+                <div class="screenshot-item">
+                    <img src="https://via.placeholder.com/300x600?text=Screenshot+3" alt="Feature 3">
+                    <div class="screenshot-caption">
+                        <h4 data-key="feat3_title">Feature Three</h4>
+                        <p data-key="feat3_desc">Detailed description of how this feature works and why it is useful for the user.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECH STACK SECTION -->
+    <section id="tech">
+        <div class="container">
+            <h2 class="section-title" data-key="tech_title">TECHNICAL STACK</h2>
+            <div class="tech-tags-container">
+                <span class="tech-tag">.NET MAUI</span>
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">XAML</span>
+                <span class="tech-tag">SQLite</span>
+                <span class="tech-tag">REST API</span>
+                <span class="tech-tag">MVVM</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="container">
+            <p>&copy; 2026 Thiago Raymundo Ribeiro</p>
+            <div class="footer-links" style="margin-top: 20px;">
+                <a href="index.html">Back to Portfolio</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const localizationData = {
+            en: {
+                "app_name": "[APP NAME]",
+                "app_description": "A brief, high-impact description of your mobile application. Explain the core problem it solves and the main value proposition for the user.",
+                "store_google": "Get it on Google Play",
+                "store_apple": "Download on App Store",
+                "features_title": "APP FEATURES",
+                "feat1_title": "Feature One",
+                "feat1_desc": "Detailed description of how this feature works and why it is useful for the user.",
+                "feat2_title": "Feature Two",
+                "feat2_desc": "Detailed description of how this feature works and why it is useful for the user.",
+                "feat3_title": "Feature Three",
+                "feat3_desc": "Detailed description of how this feature works and why it is useful for the user.",
+                "tech_title": "TECHNICAL STACK"
+            },
+            "pt-BR": {
+                "app_name": "[NOME DO APP]",
+                "app_description": "Uma descrição breve e impactante do seu aplicativo móvel. Explique o problema central que ele resolve e a principal proposta de valor para o usuário.",
+                "store_google": "Disponível no Google Play",
+                "store_apple": "Baixe na App Store",
+                "features_title": "FUNCIONALIDADES",
+                "feat1_title": "Funcionalidade Um",
+                "feat1_desc": "Descrição detalhada de como esta funcionalidade funciona e por que ela é útil para o usuário.",
+                "feat2_title": "Funcionalidade Dois",
+                "feat2_desc": "Descrição detalhada de como esta funcionalidade funciona e por que ela é útil para o usuário.",
+                "feat3_title": "Funcionalidade Três",
+                "feat3_desc": "Descrição detalhada de como esta funcionalidade funciona e por que ela é útil para o usuário.",
+                "tech_title": "STACK TECNOLÓGICA"
+            },
+            "es": {
+                "app_name": "[NOMBRE DE LA APP]",
+                "app_description": "Una descripción breve e impactante de su aplicación móvil. Explique el problema central que resuelve y la principal propuesta de valor para el usuario.",
+                "store_google": "Consíguelo en Google Play",
+                "store_apple": "Descárgalo en App Store",
+                "features_title": "CARACTERÍSTICAS",
+                "feat1_title": "Característica Uno",
+                "feat1_desc": "Descripción detallada de cómo funciona esta característica y por qué es útil para el usuario.",
+                "feat2_title": "Característica Dos",
+                "feat2_desc": "Descripción detallada de cómo funciona esta característica y por qué es útil para el usuario.",
+                "feat3_title": "Característica Tres",
+                "feat3_desc": "Descripción detallada de cómo funciona esta característica y por qué es útil para el usuario.",
+                "tech_title": "STACK TECNOLÓGICO"
+            }
+        };
+
+        function setLanguage(locale) {
+            document.documentElement.lang = locale;
+            const elements = document.querySelectorAll('[data-key]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (localizationData[locale] && localizationData[locale][key]) {
+                    el.innerHTML = localizationData[locale][key];
+                }
+            });
+            const selector = document.getElementById('language-selector');
+            if (selector) {
+                selector.value = locale;
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const browserLang = navigator.language || navigator.userLanguage;
+            let locale = 'en';
+            if (browserLang.startsWith('pt')) {
+                locale = 'pt-BR';
+            } else if (browserLang.startsWith('es')) {
+                locale = 'es';
+            } else if (browserLang.startsWith('en')) {
+                locale = 'en';
+            }
+            setLanguage(locale);
+            const selector = document.getElementById('language-selector');
+            if (selector) {
+                selector.addEventListener('change', (e) => {
+                    setLanguage(e.target.value);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
