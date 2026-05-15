@@ -216,6 +216,14 @@
                 margin-bottom: 15px;
             }
 
+            .project-card img.project-logo {
+                width: 100%;
+                max-width: 180px;
+                display: block;
+                margin: 0 0 20px;
+                object-fit: contain;
+            }
+
         /* 4. Experience Timeline Styling */
         #experience {
             background-color: var(--light-gray);
@@ -423,6 +431,7 @@
             <h2 class="section-title" data-key="projects_title">PROJECT SHOWCASE</h2>
             <div class="project-grid">
                 <div class="project-card">
+                    <img src="images/squad-hub-logo.png" alt="Squad Hub logo" class="project-logo" />
                     <h3 data-key="proj_squadhub_title">Squad Hub</h3>
                     <p data-key="proj_squadhub_desc">Squad Hub is a comprehensive soccer team management application designed to streamline the organization of matches, player statistics, and team finances. It offers an intuitive interface for coaches and team managers.</p>
                     <p><strong data-key="tech_stack">Tech Stack:</strong> <span data-key="proj_squadhub_tech">.NET 10 (target framework), .NET MAUI for cross-platform UI (XAML + C#)</span></p>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Mudança de Email - Squad Hub</title>
+</head>
+<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333333; background-color: #f5f5f5; margin: 0; padding: 0;">
+    <div style="max-width: 600px; margin: 0 auto; background-color: white; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+        <!-- Header -->
+        <div style="background-color: #009966; color: white; padding: 30px 20px; text-align: center;">
+            <h1 style="margin: 0; font-size: 28px; font-weight: 900;">Squad Hub</h1>
+            <p style="margin: 5px 0 0 0; font-size: 14px; opacity: 0.9;">Sua plataforma de gestão de times</p>
+        </div>
+
+        <!-- Main Content -->
+        <div style="padding: 40px 30px;">
+            <h2 style="color: #009966; font-size: 24px; font-weight: 800; margin-bottom: 20px;">Confirmar Mudança de Email</h2>
+            
+            <p style="margin-bottom: 20px;">Olá,</p>
+            
+            <p style="margin-bottom: 25px;">Você solicitou uma mudança de endereço de email em sua conta Squad Hub. Verifique as informações abaixo:</p>
+
+            <!-- Email Transition -->
+            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 10px; margin-bottom: 30px; text-align: center;">
+                <p style="margin: 0 0 15px 0; font-size: 12px; color: #666; font-weight: 600; text-transform: uppercase;">Email Atual</p>
+                <p style="margin: 0 0 20px 0; font-size: 16px; font-weight: 600; color: #333;">{{ .Email }}</p>
+                
+                <p style="margin: 0 0 15px 0; font-size: 18px; color: #009966;">↓</p>
+                
+                <p style="margin: 0 0 15px 0; font-size: 12px; color: #666; font-weight: 600; text-transform: uppercase;">Novo Email</p>
+                <p style="margin: 0; font-size: 16px; font-weight: 600; color: #009966;">{{ .NewEmail }}</p>
+            </div>
+
+            <p style="margin-bottom: 30px; font-weight: 600; color: #009966;">Para confirmar essa mudança, clique no botão abaixo:</p>
+
+            <!-- CTA Button -->
+            <div style="text-align: center; margin-bottom: 40px;">
+                <a href="https://trr.dev.br/squad-hub/email-change-confirm.html?redirect={{ .ConfirmationURL }}&currentEmail={{ .Email }}&newEmail={{ .NewEmail }}" style="display: inline-block; padding: 14px 40px; background-color: #009966; color: white; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 16px; transition: background-color 0.3s;">Confirmar Mudança de Email</a>
+            </div>
+
+            <p style="margin-bottom: 15px; font-size: 14px; color: #666;">Ou copie e cole este link no seu navegador:</p>
+            <p style="margin-bottom: 30px; font-size: 12px; word-break: break-all; background-color: #f5f5f5; padding: 10px; border-radius: 5px; color: #666;">
+                {{ .ConfirmationURL }}
+            </p>
+
+            <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 30px 0;">
+
+            <h3 style="color: #009966; font-size: 16px; font-weight: 700; margin-bottom: 15px;">Informações de Segurança:</h3>
+            <ul style="margin-left: 20px; color: #666;">
+                <li style="margin-bottom: 10px;">Este link expira em 24 horas por razões de segurança</li>
+                <li style="margin-bottom: 10px;">Não compartilhe este email com outras pessoas</li>
+                <li>Se você não solicitou esta mudança, por favor ignore este email e entre em contato conosco imediatamente</li>
+            </ul>
+
+            <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 30px 0;">
+
+            <p style="margin-bottom: 10px; font-size: 14px; color: #666;">Se você não solicitou essa mudança de email, ignore este email e sua conta permanecerá segura.</p>
+            <p style="font-size: 14px; color: #666;">Após confirmar, você usará <strong>{{ .NewEmail }}</strong> para fazer login no Squad Hub.</p>
+        </div>
+
+        <!-- Footer -->
+        <div style="background-color: #f5f5f5; padding: 30px; text-align: center; border-top: 1px solid #e0e0e0;">
+            <p style="margin: 0; font-size: 12px; color: #999;">
+                © 2026 Squad Hub. Todos os direitos reservados.
+            </p>
+            <p style="margin: 0; font-size: 12px; color: #999;">
+                Desenvolvido por <a href="https://trr.dev.br" style="color: #009966; text-decoration: none;">Thiago Raymundo Ribeiro</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
